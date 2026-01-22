@@ -9,7 +9,7 @@ let albums = [...initialAlbums];
 let tracks = [...initialTracks];
 
 // Helper to get next ID
-const getNextId = (array) => Math.max(0, ...array.map(item => item.id)) + 1;
+const getNextId = (array) => array.length === 0 ? 1 : Math.max(...array.map(item => item.id), 0) + 1;
 
 // Artists API
 export const artistsAPI = {
